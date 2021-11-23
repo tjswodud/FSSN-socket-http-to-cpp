@@ -22,20 +22,11 @@ int main(int argc, char* argv[])
     std::cout << "> echo-client is activated" << std::endl;
 
     int clientSocket = socket(AF_INET, SOCK_STREAM, 0);
-    if (clientSocket < 0)
-    {
-        std::cout << "\n Socket creation error \n";
-        return -1;
-    }
 
     server.sin_family = AF_INET;
     server.sin_port = htons(PORT);
 
-    if (connect(clientSocket, (struct sockaddr*)& server, sizeof(server)) < 0)
-    {
-        std::cout << "\nConnection Failed \n";
-        return -1;
-    }
+    connect(clientSocket, (struct sockaddr*)& server, sizeof(server));
     
     while (true)
     {

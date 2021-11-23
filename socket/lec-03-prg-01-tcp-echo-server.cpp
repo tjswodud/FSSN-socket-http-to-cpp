@@ -21,11 +21,6 @@ int main(int argc, char* argv[])
 
     std::cout << "> echo-server is activated" << std::endl;
     int serverSocket = socket(AF_INET, SOCK_STREAM, 0);
-    if (serverSocket == 0)
-    {
-        perror("socket failed");
-        exit(EXIT_FAILURE);
-    }
 
     if (setsockopt(serverSocket, SOL_SOCKET, SO_REUSEADDR | SO_REUSEPORT, &opt, sizeof(opt)))
     {
@@ -36,25 +31,10 @@ int main(int argc, char* argv[])
     server.sin_family = AF_INET;
     server.sin_addr.s_addr = INADDR_ANY;
     server.sin_port = htons(PORT);
-    
-    if (bind(serverSocket, (struct sockaddr*)& server, sizeof(server)) < 0)
-    {
-        perror("bind failed");
-        exit(EXIT_FAILURE);
-    }
-
-    if (listen(serverSocket, 3) < 0)
-    {
-        perror("listen failed");
-        exit(EXIT_FAILURE);
-    }
+    bind(serverSocket, (struct sockaddr*)& server, sizeof(server));
+    listen(serverSocket, 3);
 
     clientSocket = accept(serverSocket, (struct sockaddr*)& client, (socklen_t*)& c);
-    if (clientSocket < 0)
-    {
-        perror("accept failed");
-        exit(EXIT_FAILURE);
-    }
 
     std::cout << "> client connected by IP address " << HOST << " with Port number " << PORT_S << std::endl;
     while (true)
