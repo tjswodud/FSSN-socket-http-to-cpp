@@ -15,7 +15,7 @@
 
 *.json
 
-**./.vscode/
+./.vscode/
 
 # Ignore `bin` dir
 bin/
