@@ -1,74 +1,33 @@
+# Ignore all
+*
 
-# Created by https://www.toptal.com/developers/gitignore/api/visualstudiocode,c++,linux
-# Edit at https://www.toptal.com/developers/gitignore?templates=visualstudiocode,c++,linux
+# Unignore all with extensions
+!*.*
 
-### C++ ###
-# Prerequisites
-*.d
+# Unignore all dirs
+!*/
 
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
+### Above combination will ignore all files without extension ###
 
-# Precompiled Headers
-*.gch
-*.pch
+# Ignore files with extension `.class` & `.sm`
+*.class
+*.sm
 
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
+*.json
 
-# Fortran module files
-*.mod
-*.smod
+# Ignore `bin` dir
+bin/
+# or
+*/bin/*
 
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
+# Unignore all `.jar` in `bin` dir
+!*/bin/*.jar
 
-# Executables
-*.exe
-*.out
-*.app
+# Ignore all `library.jar` in `bin` dir
+*/bin/library.jar
 
-### Linux ###
-*~
+# Ignore a file with extension
+relative/path/to/dir/filename.extension
 
-# temporary files which can be created if a process still has a handle open of a deleted file
-.fuse_hidden*
-
-# KDE directory preferences
-.directory
-
-# Linux trash folder which might appear on any partition or disk
-.Trash-*
-
-# .nfs files are created when an open file is removed but is still being accessed
-.nfs*
-
-### VisualStudioCode ###
-.vscode
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
-*.code-workspace
-
-# Local History for Visual Studio Code
-.history/
-
-### VisualStudioCode Patch ###
-# Ignore all local history of files
-.history
-.ionide
-
-# Support for Project snippet scope
-!.vscode/*.code-snippets
-
-# End of https://www.toptal.com/developers/gitignore/api/visualstudiocode,c++,linux
+# Ignore a file without extension
+relative/path/to/dir/anotherfile
