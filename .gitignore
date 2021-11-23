@@ -1,21 +1,15 @@
 # Ignore all
 *
 
-# Unignore all with extensions
-!*.*
-
-# Unignore all dirs
-!*/
-
 ### Above combination will ignore all files without extension ###
 
 # Ignore files with extension `.class` & `.sm`
 *.class
 *.sm
 
-*.json
+.json
 
-./.vscode/
+/.vscode/
 
 # Ignore `bin` dir
 bin/
